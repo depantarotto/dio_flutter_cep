@@ -1,4 +1,4 @@
-import 'package:dio_flutter_cep/pages/home_page.dart';
+import 'package:dio_flutter_cep/pages/lista_cep.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Busca CEP'),
+      home: const ListaCep(title: 'Busca CEP'),
     );
   }
 }

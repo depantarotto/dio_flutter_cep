@@ -4,10 +4,16 @@ import 'package:dio_flutter_cep/repository/back4app/back4app_cep_custom_dio.dart
 class Back4AppCepRepository {
   final _customDio = Back4AppCepCustomDio();
 
-  Future<Back4AppCepModel> listar() async {
+  Future<List<Back4AppCepModel>> listar() async {
     var url = '/Cep';
     var result = await _customDio.dio.get(url);
-    return Back4AppCepModel.fromJson(result.data);
+    if (result.statusCode == 200) {
+      return (result.data as List)
+          .map((cep) => Back4AppCepModel.fromJson(cep))
+          .toList();
+    } else {
+      return [];
+    }
   }
 
   Future<Back4AppCepModel> buscar(String cep) async {

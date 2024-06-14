@@ -8,7 +8,7 @@ class Back4AppCepCustomDio {
   Dio get dio => _dio;
 
   // ignore: non_constant_identifier_names
-  Back4AppCustonDio() {
+  Back4AppCepCustomDio() {
     _dio.options.headers["Content-Type"] = "application/json";
     _dio.options.baseUrl = dotenv.get("BACK4APP_BASE_URL");
     _dio.interceptors.add(Back4AppCepInterceptor());
